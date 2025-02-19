@@ -33,7 +33,7 @@ class UnicredTest extends TestCase
         );
 
         $this->assertInstanceOf(\OpenBoleto\Banco\Unicred::class, $instance);
-        $this->assertEquals('13693.30202 00000.225904 00001.395136 9 55650000001050', $instance->getLinhaDigitavel());
+        $this->assertEquals('13693.30202 00000.225904 00001.395136 7 55650000001050', $instance->getLinhaDigitavel());
         $this->assertSame('0000013951-3', (string) $instance->getNossoNumero());
     }
 }

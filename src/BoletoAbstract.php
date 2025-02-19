@@ -261,7 +261,7 @@ abstract class BoletoAbstract
      * Array com as linhas de instruções
      * @var array
      */
-    protected $instrucoes = array('Pagar até a data do vencimento.');
+    protected $instrucoes = array();
 
     /**
      * Nome do arquivo de template a ser usado
@@ -286,6 +286,8 @@ abstract class BoletoAbstract
      * @var string
      */
     protected $logoBanco;
+
+    protected $detalhamento;
 
     /**
      * Array que sera exportada pelo metodo getData
@@ -930,6 +932,10 @@ abstract class BoletoAbstract
         return $this->outrasDeducoes;
     }
 
+    public function getDetalhamento(){
+        return $this->detalhamento;
+    }
+
     /**
      * Define o campo outros acréscimos do boleto
      *
@@ -1336,6 +1342,7 @@ abstract class BoletoAbstract
             'uso_banco' => $this->getUsoBanco(),
             'codigo_barras' => $this->getImagemCodigoDeBarras(),
             'resource_path' => $this->getResourcePath(),
+            'detalhamento' => $this->getDetalhamento(),
             'numero_febraban' => $this->getNumeroFebraban(),
             'imprime_instrucoes_impressao' => $this->getImprimeInstrucoesImpressao(),
             'imprime_valor' => $this->getImprimeValor()
@@ -1728,5 +1735,10 @@ abstract class BoletoAbstract
             $result['digito'] = 0;
         }
         return $result;
+    }
+
+    public function setDetalhamento($detalhamento){
+        $this->detalhamento = $detalhamento;
+        return $this;
     }
 }

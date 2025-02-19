@@ -1,12 +1,12 @@
 {
-    "name": "openboleto/openboleto",
+    "name": "gustavopimentelrinaldi/openboleto",
     "type": "library",
     "description": "Biblioteca para geração de boletos bancários.",
     "keywords": [
         "boleto",
         "boleto bancario"
     ],
-    "homepage": "http://github.com/openboleto/openboleto",
+    "homepage": "http://github.com/gustavopimentelrinaldi/openboleto",
     "license": "MIT",
     "authors": [
         {

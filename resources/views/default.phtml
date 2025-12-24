@@ -119,6 +119,16 @@ use OpenBoleto\QrCodePix;
 						<div class="rtl"><span class="conteudo"><?php echo $data_vencimento ?></span></div>
 					</td>
 				</tr>
+				<tr>
+					<td colspan="7" class="notopborder nobottomborder noleftborder">
+					</td>
+					<td class="notopborder nobottomborder noleftborder" style="text-align:center">
+						<?php if (isset ($qr_code) && !empty ($qr_code)): ?>
+							<img src="<?php echo QrCodePix::image($qr_code); ?>" alt="QR Code" />
+						<?php endif; ?>
+					</td>
+				</tr>
+				
 				<tr style="height: 39px;">
 					<td colspan="6">
 						<span class="titulo">Beneficiário</span><br>
@@ -272,7 +282,6 @@ use OpenBoleto\QrCodePix;
 						<?php echo $codigo_barras ?>
 					</td>
 				</tr>
-
 			</tbody>
 		</table>
          <br>

@@ -42,12 +42,21 @@
          </td>
       </tr>
       <tr>
-         <td colspan="7" class="notopborder nobottomborder noleftborder">
+         <td colspan="7">
+            
          </td>
-         <td class="notopborder nobottomborder noleftborder" style="text-align:center">
+         <td class="notopborder nobottomborder noleftborder norightborder" style="text-align:center">
             <?php if (isset ($qr_code) && !empty ($qr_code)): ?>
                <img src="<?php echo QrCodePix::image($qr_code); ?>" style="width:150px; height:150px;" alt="QR Code" />
             <?php endif; ?>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="7">
+            <div class="titulo">Pix Copia e Cola</div>
+            <div class="conteudo">
+               <?php echo $qr_code ?>
+            </div>
          </td>
       </tr>
       <tr>

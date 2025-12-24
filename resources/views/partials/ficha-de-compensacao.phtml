@@ -39,6 +39,15 @@
          </td>
       </tr>
       <tr>
+         <td colspan="7" class="notopborder nobottomborder noleftborder">
+         </td>
+         <td class="notopborder nobottomborder noleftborder" style="text-align:center">
+            <?php if (isset ($qr_code) && !empty ($qr_code)): ?>
+               <img src="<?php echo QrCodePix::image($qr_code); ?>" style="width:150px; height:150px;" alt="QR Code" />
+            <?php endif; ?>
+         </td>
+      </tr>
+      <tr>
          <td colspan="7">
             <div class="titulo">Local de pagamento</div>
             <div class="conteudo">

@@ -26,20 +26,15 @@
         display: none;
     }
 }
-* {
-    box-sizing: border-box
-}
+
 body {
     background-color: #ffffff;
     margin-right: 0;
 }
-body>div {
-    width: 100% !important;
-}
+
 .table-boleto {
-    font: 11pt Arial;
-    width: 100% !important;
-    height: 100mm !important;
+    font: 9px Arial;
+    width: 666px;
 }
 
 .table-boleto td {
@@ -55,6 +50,7 @@ body>div {
 .table-boleto .titulo {
     color: #000033;
 }
+
 .linha-pontilhada {
     color: #000033;
     font: 9px Arial;
@@ -76,9 +72,6 @@ body>div {
 
 .table-boleto td {
     padding: 1px 4px;
-}
-td[width] {
-    width: auto !important;
 }
 
 .table-boleto .noleftborder {
@@ -104,20 +97,17 @@ td[width] {
 .table-boleto .rtl {
     text-align: right;
 }
-.table-boleto .linha-digitavel { 
-    font-size: 16pt;
-    width: 70% !important;
-    padding: 1px 5px !important;
-    margin-right: 25px !important;
-}
-.table-boleto .logocontainer {
-    width: 257px;
-    display: inline !important;
-}
+
 .table-boleto .logobanco {
     display: inline-block;
     max-width: 150px;
 }
+
+.table-boleto .logocontainer {
+    width: 257px;
+    display: inline-block;
+}
+
 .table-boleto .logobanco img {
     margin-bottom: -5px;
     height: 27px;

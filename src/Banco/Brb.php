@@ -42,7 +42,7 @@ class Brb extends BoletoAbstract
 {
 
     /* Número FEBRABAN do bolepix para geração do código de barra */
-    protected $numeroFebrabanCustom = null;
+    protected ?string $numeroFebrabanCustom = null;
 
     public function setNumeroFebrabanCustom(string $codigo)
     {
@@ -50,7 +50,7 @@ class Brb extends BoletoAbstract
         return $this;
     }
 
-    protected function getNumeroFebraban()
+    public function getNumeroFebraban()
     {
         return $this->numeroFebrabanCustom
             ? $this->numeroFebrabanCustom

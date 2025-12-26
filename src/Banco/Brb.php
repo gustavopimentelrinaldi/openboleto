@@ -40,6 +40,39 @@ use OpenBoleto\BoletoAbstract;
  */
 class Brb extends BoletoAbstract
 {
+
+    /* Número FEBRABAN do bolepix para geração do código de barra */
+    protected $numeroFebrabanCustom = null;
+
+    public function setNumeroFebrabanCustom(string $codigo)
+    {
+        $this->numeroFebrabanCustom = $codigo;
+        return $this;
+    }
+
+    protected function getNumeroFebraban()
+    {
+        return $this->numeroFebrabanCustom
+            ? $this->numeroFebrabanCustom
+            : parent::getNumeroFebraban();
+    }
+
+    public function getViewVars()
+    {
+        return [
+            'esconde_uso_banco'      => false,
+            'mostra_cip'             => false,
+            'mostra_carteira'        => true,
+            'mostra_agencia'         => true,
+            'mostra_conta'           => true,
+            'mostra_codigo_banco'    => true,
+            'mostra_linha_digitavel' => true,
+            'mostra_codigo_barras'   => true,
+            'mostra_valor'           => true,
+            'mostra_vencimento'      => true,
+        ];
+    }
+    
     /**
      * Código do banco
      * @var string

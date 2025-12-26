@@ -43,6 +43,8 @@ class Brb extends BoletoAbstract
 
     /* Número FEBRABAN do bolepix para geração do código de barra */
     protected ?string $numeroFebrabanCustom = null;
+    protected ?string $nossoNumeroCustom = null;
+    protected ?string $linhaDigitavelCustom = null;
 
     public function setNumeroFebrabanCustom(string $codigo)
     {
@@ -57,22 +59,30 @@ class Brb extends BoletoAbstract
             : parent::getNumeroFebraban();
     }
 
-    public function getViewVars()
+    public function setNossoNumeroCustom(string $nossoNumero)
     {
-        return [
-            'esconde_uso_banco'      => false,
-            'mostra_cip'             => false,
-            'mostra_carteira'        => true,
-            'mostra_agencia'         => true,
-            'mostra_conta'           => true,
-            'mostra_codigo_banco'    => true,
-            'mostra_linha_digitavel' => true,
-            'mostra_codigo_barras'   => true,
-            'mostra_valor'           => true,
-            'mostra_vencimento'      => true,
-        ];
+        $this->nossoNumeroCustom = $nossoNumero;
+        return $this;
     }
-    
+
+    public function getNossoNumero($incluirFormatacao = true)
+    {
+        return $this->nossoNumeroCustom
+            ?: parent::getNossoNumero($incluirFormatacao);
+    }
+
+    public function setLinhaDigitavelCustom(string $linha)
+    {
+        $this->linhaDigitavelCustom = $linha;
+        return $this;
+    }
+
+    public function getLinhaDigitavel()
+    {
+        return $this->linhaDigitavelCustom
+            ?: parent::getLinhaDigitavel();
+    }
+
     /**
      * Código do banco
      * @var string

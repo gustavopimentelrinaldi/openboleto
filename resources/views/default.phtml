@@ -25,7 +25,9 @@
     <head>
         <meta charset="UTF-8">
         <title><?php echo $cedente; ?></title>
-        
+        <style type="text/css">
+			<?php echo file_get_contents(realpath($resource_path . '/css/styles-pdf.css')); ?>
+		</style>
     </head>
     <body>
 

@@ -33,8 +33,7 @@
     <body>
 
 		<?php
-            $bolepixRegistrado = !empty($qr_code) && !empty($codigo_barra) && !empty($linha_digitavel) && !empty($nosso_numero);
-            dd($qr_code, $codigo_barra, $linha_digitavel, $nosso_numero);
+            $bolepixRegistrado = !empty($qr_code) && !empty($linha_digitavel) && !empty($nosso_numero);
             $bolepixIncompleto = !$bolepixRegistrado;
         ?>
         <?php if ($bolepixIncompleto) : ?>

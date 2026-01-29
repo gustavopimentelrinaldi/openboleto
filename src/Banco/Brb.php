@@ -45,6 +45,7 @@ class Brb extends BoletoAbstract
     protected ?string $numeroFebrabanCustom = null;
     protected ?string $nossoNumeroCustom = null;
     protected ?string $linhaDigitavelCustom = null;
+    protected ?string $situacaoRegistro = null;
 
     public function setNumeroFebrabanCustom(string $codigo)
     {
@@ -81,6 +82,17 @@ class Brb extends BoletoAbstract
     {
         return $this->linhaDigitavelCustom
             ?: parent::getLinhaDigitavel();
+    }
+
+    public function setSituacaoRegistro(?string $s)
+    {
+        $this->situacaoRegistro = $s;
+        return $this;
+    }
+
+    public function getSituacaoRegistro(): ?string
+    {
+        return $this->situacaoRegistro;
     }
 
     /**

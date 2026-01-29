@@ -177,4 +177,12 @@ class Brb extends BoletoAbstract
     {
         return '000 - ' . $this->getAgencia() . ' - ' . $this->getConta() . ' - ' . $this->getContaDv();
     }
+
+    public function getViewVars()
+    {
+        return [
+            'situacao_registro' => $this->getSituacaoRegistro(),
+            'is_bolepix'        => $this->getSituacaoRegistro() !== null,
+        ];
+    }
 }

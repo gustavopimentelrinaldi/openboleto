@@ -33,7 +33,12 @@
     <body>
 		<?php
             $isBolepix = !empty($is_bolepix); // vindo do getViewVars()
-            $registradoNoBrb = strtoupper((string)($situacao_registro ?? '')) === 'PROCESSADO';
+            $situacao = strtoupper((string)($situacao_registro ?? ''));
+
+            $registradoNoBrb = in_array($situacao, [
+                'PROCESSADO',
+                'CONCLUIDO',
+            ], true);
         ?>
 
         <?php if ($isBolepix && !$registradoNoBrb) : ?>

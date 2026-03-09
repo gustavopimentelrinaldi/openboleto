@@ -36,8 +36,9 @@
             $situacao = strtoupper((string)($situacao_registro ?? ''));
 
             $registradoNoBrb = in_array($situacao, [
-                'PROCESSADO',
-                'CONCLUIDO',
+                'PROCESSADO/CRIADO',
+                'PROCESSADO/REGISTRADO',
+                'PROCESSADO/PAGO',
             ], true);
         ?>
 

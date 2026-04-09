@@ -65,9 +65,16 @@ body {
     min-height: 13px;
 }
 
+.table-boleto .pix-copia-cola {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+}
+
 .table-boleto .sacador {
     display: inline;
     margin-left: 5px;
+    word-break: break-all;
+    overflow-wrap: anywhere;
 }
 
 .table-boleto td {

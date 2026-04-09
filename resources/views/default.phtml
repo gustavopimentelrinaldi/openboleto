@@ -34,9 +34,10 @@
 		<?php
             $isBolepix = !empty($is_bolepix); // vindo do getViewVars()
             $situacao = strtoupper((string)($situacao_registro ?? ''));
+            $temLinhaDigitavel = trim((string)($linha_digitavel ?? '')) !== '';
+            $temCodigoFebraban = trim((string)($numero_febraban ?? '')) !== '';
 
-            $registradoNoBrb = in_array($situacao, [
-                'PROCESSADO/CRIADO',
+            $registradoNoBrb = $temLinhaDigitavel && $temCodigoFebraban && in_array($situacao, [
                 'PROCESSADO/REGISTRADO',
                 'PROCESSADO/PAGO',
             ], true);
@@ -90,7 +91,7 @@
                                 </div>
                                 <div class="codbanco"><?php echo $codigo_banco_com_dv ?></div>
                             </div>
-                            <div class="linha-digitavel"><?php echo $linha_digitavel ?></div>
+                            <div class="linha-digitavel"><?php echo $temLinhaDigitavel ? $linha_digitavel : '&nbsp;'; ?></div>
                         </td>
                     </tr>
                     <tr>

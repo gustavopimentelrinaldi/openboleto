@@ -34,7 +34,7 @@
                     </div>
                     <div class="codbanco"><?php echo $codigo_banco_com_dv ?></div>
                 </div>
-                <div class="linha-digitavel"><?php echo $linha_digitavel ?></div>
+                <div class="linha-digitavel"><?php echo !empty(trim((string) $linha_digitavel)) ? $linha_digitavel : '&nbsp;'; ?></div>
             </td>
         </tr>
         <tr>
@@ -48,10 +48,10 @@
          </td>
       </tr>
       <tr>
-         <td colspan="12">
+         <td colspan="8">
             <div class="titulo">Pix Copia e Cola</div>
-            <div class="conteudo">
-               <?php echo $qr_code ?>
+            <div class="conteudo pix-copia-cola">
+               <?php echo !empty($qr_code) ? $qr_code : '&nbsp;' ?>
             </div>
          </td>
       </tr>
@@ -215,7 +215,9 @@
 
         <tr>
             <td colspan="8" class="noborder">
-                <?php echo $codigo_barras ?>
+                <?php if (!empty(trim((string) $numero_febraban))) : ?>
+                    <?php echo $codigo_barras ?>
+                <?php endif; ?>
             </td>
         </tr>
 

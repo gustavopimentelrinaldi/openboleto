@@ -55,7 +55,7 @@ class Brb extends BoletoAbstract
 
     public function getNumeroFebraban()
     {
-        return $this->numeroFebrabanCustom
+        return $this->numeroFebrabanCustom !== null
             ? $this->numeroFebrabanCustom
             : parent::getNumeroFebraban();
     }
@@ -68,8 +68,9 @@ class Brb extends BoletoAbstract
 
     public function getNossoNumero($incluirFormatacao = true)
     {
-        return $this->nossoNumeroCustom
-            ?: parent::getNossoNumero($incluirFormatacao);
+        return $this->nossoNumeroCustom !== null
+            ? $this->nossoNumeroCustom
+            : parent::getNossoNumero($incluirFormatacao);
     }
 
     public function setLinhaDigitavelCustom(string $linha)
@@ -80,8 +81,9 @@ class Brb extends BoletoAbstract
 
     public function getLinhaDigitavel()
     {
-        return $this->linhaDigitavelCustom
-            ?: parent::getLinhaDigitavel();
+        return $this->linhaDigitavelCustom !== null
+            ? $this->linhaDigitavelCustom
+            : parent::getLinhaDigitavel();
     }
 
     public function setSituacaoRegistro(?string $s)
